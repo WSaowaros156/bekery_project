@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ร้านเบเกอรี่น้องออโต้</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body { background-color: #fffdf9; }
+    .navbar-brand { font-weight: bold; font-size: 1.3rem; }
+    .category-card {
+      transition: transform 0.3s, box-shadow 0.3s;
+      border: none;
+    }
+    .category-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+    .category-card img {
+      height: 220px;
+      object-fit: cover;
+      border-top-left-radius: .75rem;
+      border-top-right-radius: .75rem;
+    }
+    footer { background: #f8f9fa; margin-top: 50px; }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm sticky-top">
+    <div class="container">
+      <a class="navbar-brand text-primary" href="#">ร้านเบเกอรี่น้องออโต้</a>
+      
+      <!-- ฟอร์มค้นหา -->
+      <form class="d-flex ms-auto me-3">
+        <input class="form-control me-2" type="search" placeholder="ค้นหาสินค้า..." aria-label="Search">
+        <button class="btn btn-outline-primary" type="submit">ค้นหา</button>
+      </form>
+
+      <!-- ปุ่มสมาชิก -->
+      <div id="guestMenu">
+        <a href="register.html" class="btn btn-outline-success me-2">สมัครสมาชิก</a>
+        <a href="login.html" class="btn btn-primary">เข้าสู่ระบบ</a>
+      </div>
+
+      <!-- เมนูเมื่อ Login แล้ว -->
+      <div id="memberMenu" class="d-none">
+        <a href="orderhistory.html" class="btn btn-outline-primary me-2">ประวัติการสั่งซื้อ</a>
+        <a href="order_status.html" class="btn btn-outline-success me-2">เช็คสถานะออเดอร์</a>
+        <a href="profile_edit.html" class="btn btn-outline-warning me-2">แก้ไขข้อมูล</a>
+        <a href="test.html" onclick="logout()" class="btn btn-danger">ออกจากระบบ</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="bg-warning bg-gradient text-white text-center py-5">
+    <div class="container">
+      <h1 class="display-5 fw-bold">🍰 ร้านเบเกอรี่น้องออโต้</h1>
+      <p class="lead">สดใหม่ทุกวัน หวานหอมละมุน จากเตาอบสู่มือคุณ</p>
+      <a href="#categories" class="btn btn-light btn-lg mt-3">ดูเมนูทั้งหมด</a>
+    </div>
+  </header>
+
+  <!-- Categories -->
+  <section id="categories" class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-4">เลือกประเภทสินค้า</h2>
+      <div class="row g-4">
+        
+        <!-- เค้ก -->
+        <div class="col-md-3">
+          <div class="card category-card h-100">
+            <img src="ca.jpg" class="card-img-top" alt="เค้ก">
+            <div class="card-body text-center">
+              <h5 class="card-title">เค้ก</h5>
+              <p class="card-text text-muted">สตรอว์เบอร์รี่, ใบเตย, ช็อกโกแลต</p>
+              <a href="cake.aferlogin.html" class="btn btn-primary">ดูเมนู</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- คุกกี้ -->
+        <div class="col-md-3">
+          <div class="card category-card h-100">
+            <img src="cook.jpg" class="card-img-top" alt="คุกกี้">
+            <div class="card-body text-center">
+              <h5 class="card-title">คุกกี้</h5>
+              <p class="card-text text-muted">ช็อกโกแลตชิพ, เนย, งา</p>
+              <a href="cookie.afterlogin.html" class="btn btn-primary">ดูเมนู</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ขนมปัง -->
+        <div class="col-md-3">
+          <div class="card category-card h-100">
+            <img src="baker.jpg" class="card-img-top" alt="ขนมปัง">
+            <div class="card-body text-center">
+              <h5 class="card-title">ขนมปัง</h5>
+              <p class="card-text text-muted">ครัวซอง, ชิโอปัง, ไส้กรอก</p>
+              <a href="bread.aferlogin.html" class="btn btn-primary">ดูเมนู</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- โดนัท -->
+        <div class="col-md-3">
+          <div class="card category-card h-100">
+            <img src="d0.jpg" class="card-img-top" alt="โดนัท">
+            <div class="card-body text-center">
+              <h5 class="card-title">โดนัท</h5>
+              <p class="card-text text-muted">น้ำตาล, ช็อกโกแลต, สตรอว์เบอร์รี่</p>
+              <a href="donut.afterlogin.html" class="btn btn-primary">ดูเมนู</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center py-4">
+    <div class="container">
+      <p class="mb-1">&copy; 2025 ร้านเบเกอรี่น้องออโต้</p>
+      <small>ติดต่อ: 081-234-5678 | Line: @nongoauto</small>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Script จำลองระบบ login/logout -->
+  <script>
+    // จำลองว่ามีการ login แล้ว
+    let isLoggedIn = true;
+
+    function renderMenu() {
+      if (isLoggedIn) {
+        document.getElementById("guestMenu").classList.add("d-none");
+        document.getElementById("memberMenu").classList.remove("d-none");
+      } else {
+        document.getElementById("guestMenu").classList.remove("d-none");
+        document.getElementById("memberMenu").classList.add("d-none");
+      }
+    }
+
+    function logout() {
+      isLoggedIn = false;
+      renderMenu();
+      alert("ออกจากระบบเรียบร้อย");
+    }
+
+    // เรียกใช้งานตอนโหลดหน้า
+    renderMenu();
+  </script>
+</body>
+</html>
